@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Sales Training</title>
-    <meta name="referrer" content="no-referrer">
+    <title>IT Sales Training Deck</title>
     <style>
         * {
             margin: 0;
@@ -17,25 +16,24 @@
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: #333;
             overflow-x: hidden;
-            min-height: 100vh;
         }
 
-        .lms-container {
-            max-width: 100%;
-            margin: 0;
-            padding: 10px;
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         .slide {
             background: white;
-            min-height: 80vh;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            min-height: 600px;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             position: relative;
             display: none;
-            animation: slideIn 0.4s ease-out;
+            animation: slideIn 0.6s ease-out;
         }
 
         .slide.active {
@@ -45,202 +43,210 @@
         @keyframes slideIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateX(50px);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateX(0);
             }
         }
 
+        /* Header Styles */
         .slide-header {
-            border-bottom: 3px solid #2a5298;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            border-bottom: 4px solid #2a5298;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
         }
 
         .slide h1 {
             color: #1e3c72;
-            font-size: 1.8rem;
-            margin-bottom: 8px;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
             font-weight: 700;
         }
 
         .slide h2 {
             color: #2a5298;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 2rem;
+            margin-bottom: 20px;
             font-weight: 600;
         }
 
         .slide h3 {
             color: #1e3c72;
-            font-size: 1.3rem;
-            margin: 20px 0 12px 0;
+            font-size: 1.5rem;
+            margin: 25px 0 15px 0;
             font-weight: 600;
         }
 
         .slide h4 {
             color: #2a5298;
-            font-size: 1.1rem;
-            margin: 12px 0 8px 0;
+            font-size: 1.2rem;
+            margin: 15px 0 10px 0;
             font-weight: 600;
         }
 
         .subtitle {
             color: #666;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-style: italic;
         }
 
+        /* Content Layout */
         .two-column {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 15px 0;
+            gap: 30px;
+            margin: 20px 0;
         }
 
         .three-column {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 15px;
-            margin: 15px 0;
+            gap: 20px;
+            margin: 20px 0;
         }
 
         .four-column {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin: 15px 0;
+            gap: 15px;
+            margin: 20px 0;
         }
 
+        /* Card Styles */
         .content-card {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 15px;
-            border-left: 4px solid #2a5298;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 5px solid #2a5298;
             transition: transform 0.3s ease;
         }
 
         .content-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .example-card {
             background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
             border: 2px solid #38b2ac;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 15px 0;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
             position: relative;
         }
 
         .example-card::before {
             content: "💡";
             position: absolute;
-            top: -8px;
-            left: 15px;
+            top: -10px;
+            left: 20px;
             background: white;
-            padding: 4px 8px;
-            border-radius: 15px;
-            font-size: 1rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 1.2rem;
         }
 
         .exercise-card {
             background: linear-gradient(135deg, #fef5e7 0%, #fed7aa 100%);
             border: 2px solid #f59e0b;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 15px 0;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
             position: relative;
         }
 
         .exercise-card::before {
             content: "🎯";
             position: absolute;
-            top: -8px;
-            left: 15px;
+            top: -10px;
+            left: 20px;
             background: white;
-            padding: 4px 8px;
-            border-radius: 15px;
-            font-size: 1rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 1.2rem;
         }
 
         .quiz-card {
             background: linear-gradient(135deg, #f0f4ff 0%, #dbeafe 100%);
             border: 2px solid #3b82f6;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 15px 0;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
             position: relative;
         }
 
         .quiz-card::before {
             content: "❓";
             position: absolute;
-            top: -8px;
-            left: 15px;
+            top: -10px;
+            left: 20px;
             background: white;
-            padding: 4px 8px;
-            border-radius: 15px;
-            font-size: 1rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 1.2rem;
         }
 
+        /* Lists and Text */
         ul, ol {
-            margin: 12px 0;
-            padding-left: 20px;
+            margin: 15px 0;
+            padding-left: 25px;
         }
 
         li {
-            margin: 6px 0;
-            line-height: 1.5;
+            margin: 8px 0;
+            line-height: 1.6;
         }
 
         p {
-            line-height: 1.6;
-            margin: 8px 0;
+            line-height: 1.7;
+            margin: 10px 0;
         }
 
         .highlight {
             background: #fff3cd;
             border: 1px solid #ffc107;
-            border-radius: 4px;
-            padding: 12px;
-            margin: 12px 0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
             font-weight: 500;
         }
 
         .key-point {
             background: #d1ecf1;
             border-left: 4px solid #17a2b8;
-            padding: 12px;
-            margin: 12px 0;
-            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
         }
 
-        .lms-navigation {
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             background: rgba(30, 60, 114, 0.95);
-            padding: 12px 20px;
-            border-radius: 25px;
+            padding: 15px 25px;
+            border-radius: 50px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin: 15px 0;
-            backdrop-filter: blur(8px);
+            gap: 20px;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
         }
 
         .nav-btn {
             background: #2a5298;
             color: white;
             border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 10px 20px;
+            border-radius: 25px;
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
         }
 
         .nav-btn:hover:not(:disabled) {
@@ -258,13 +264,12 @@
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 0.9rem;
+            gap: 15px;
         }
 
         .progress-bar {
-            width: 150px;
-            height: 5px;
+            width: 200px;
+            height: 6px;
             background: rgba(255,255,255,0.3);
             border-radius: 3px;
             overflow: hidden;
@@ -276,12 +281,13 @@
             transition: width 0.3s ease;
         }
 
+        /* Special Elements */
         .diagram-container {
             background: #f8f9fa;
             border: 2px solid #dee2e6;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 15px 0;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px 0;
             text-align: center;
         }
 
@@ -289,160 +295,109 @@
             display: inline-block;
             background: #2a5298;
             color: white;
-            padding: 8px 12px;
-            margin: 6px;
-            border-radius: 6px;
+            padding: 12px 18px;
+            margin: 8px;
+            border-radius: 8px;
             font-weight: 600;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            font-size: 0.9rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
 
         .connection-line {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #2a5298;
-            margin: 0 10px;
+            margin: 0 15px;
             font-weight: bold;
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 12px;
-            margin: 15px 0;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
         }
 
         .stat-card {
             background: #2a5298;
             color: white;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
         }
 
         .stat-number {
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: bold;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
 
         .quote-box {
             background: #f8f9fa;
-            border-left: 4px solid #28a745;
-            padding: 15px;
-            margin: 15px 0;
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
             font-style: italic;
-            border-radius: 0 8px 8px 0;
+            border-radius: 0 10px 10px 0;
         }
 
         .checklist {
             background: #f8f9fa;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 15px 0;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
         }
 
         .checklist-item {
             display: flex;
             align-items: center;
-            margin: 8px 0;
+            margin: 10px 0;
         }
 
         .checklist-item::before {
             content: "✓";
             color: #28a745;
             font-weight: bold;
-            margin-right: 8px;
-            font-size: 1.1rem;
+            margin-right: 10px;
+            font-size: 1.2rem;
         }
 
-        .module-overview {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin: 15px 0;
-        }
-
-        .module-card {
-            background: #f7fafc;
-            border-radius: 8px;
-            padding: 15px;
-            border-left: 4px solid #667eea;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .module-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        /* LMS-specific iframe styles */
-        iframe {
-            max-width: 100%;
-            height: 250px;
-            border-radius: 8px;
-        }
-
-        /* Responsive adjustments for LMS */
+        /* Responsive Design */
         @media (max-width: 768px) {
             .two-column, .three-column, .four-column {
                 grid-template-columns: 1fr;
             }
             
             .slide {
-                padding: 15px;
-                margin: 5px 0;
+                padding: 20px;
+                margin: 10px;
             }
             
             .slide h1 {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
             
-            iframe {
-                height: 200px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .lms-container {
-                padding: 5px;
-            }
-            
-            .slide {
-                padding: 10px;
-            }
-            
-            iframe {
-                height: 180px;
+            .navigation {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                margin: 20px 0;
             }
         }
     </style>
 </head>
 <body>
-    <div class="lms-container">
-        <!-- Navigation at top for LMS -->
-        <div class="lms-navigation">
-            <button class="nav-btn" onclick="previousSlide()" id="prevBtn">← Previous</button>
-            <div class="slide-info">
-                <span id="slideCounter">Slide 1 of 13</span>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressFill" style="width: 7.7%"></div>
-                </div>
-            </div>
-            <button class="nav-btn" onclick="nextSlide()" id="nextBtn">Next →</button>
-        </div>
-
+    <div class="presentation-container">
         <!-- Slide 1: Title Slide -->
         <div class="slide active">
-            <div style="text-align: center; padding: 40px 0;">
-                <h1 style="font-size: 2.5rem; margin-bottom: 15px; color: #1e3c72;">
+            <div style="text-align: center; padding: 80px 0;">
+                <h1 style="font-size: 3.5rem; margin-bottom: 20px; color: #1e3c72;">
                     🚀 Comprehensive IT Sales Training
                 </h1>
-                <p class="subtitle" style="font-size: 1.2rem; margin-bottom: 30px;">
+                <p class="subtitle" style="font-size: 1.5rem; margin-bottom: 40px;">
                     Master the Art of IT Sales Excellence
                 </p>
-                <div style="background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%); color: white; padding: 25px; border-radius: 12px; margin: 30px 0;">
-                    <h3 style="color: white; margin-bottom: 15px;">Course Overview</h3>
+                <div style="background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%); color: white; padding: 30px; border-radius: 15px; margin: 40px 0;">
+                    <h3 style="color: white; margin-bottom: 20px;">Course Overview</h3>
                     <div class="two-column">
                         <div>
                             <h4 style="color: #b3d9ff;">🎯 What You'll Learn:</h4>
@@ -469,61 +424,7 @@
             </div>
         </div>
 
-        <!-- Slide 2: Module Overview Navigation -->
-        <div class="slide">
-            <div class="slide-header">
-                <h1>📚 Training Modules</h1>
-                <p class="subtitle">Click any module to jump directly to that section</p>
-            </div>
-            
-            <div class="module-overview">
-                <div class="module-card" onclick="goToSlide(3)">
-                    <h4>🔧 Module 1: Technical Foundation</h4>
-                    <p>Core IT concepts every sales rep needs</p>
-                </div>
-                <div class="module-card" onclick="goToSlide(4)">
-                    <h4>🎯 Module 2: Service Delivery Models</h4>
-                    <p>Break/fix, managed services, project-based</p>
-                </div>
-                <div class="module-card" onclick="goToSlide(5)">
-                    <h4>⚙️ Module 3: Managed Services</h4>
-                    <p>SLAs, KPIs, and monitoring tools</p>
-                </div>
-                <div class="module-card" onclick="goToSlide(6)">
-                    <h4>🖥️ Module 4: Deskside & Depot</h4>
-                    <p>IMACs and hardware support</p>
-                </div>
-                <div class="module-card" onclick="goToSlide(7)">
-                    <h4>🏢 Module 5: Datacenter & AV</h4>
-                    <p>Smart Hands and AV systems</p>
-                </div>
-                <div class="module-card" onclick="goToSlide(8)">
-                    <h4>💼 Module 6: Sales Skills</h4>
-                    <p>Discovery, value selling, objections</p>
-                </div>
-                <div class="module-card" onclick="goToSlide(9)">
-                    <h4>🛠️ Module 7: Tools & Systems</h4>
-                    <p>CRM, quoting, proposals</p>
-                </div>
-                <div class="module-card" onclick="goToSlide(10)">
-                    <h4>📋 Module 8: Industry & Compliance</h4>
-                    <p>HIPAA, PCI-DSS, GDPR standards</p>
-                </div>
-                <div class="module-card" onclick="goToSlide(11)">
-                    <h4>🤝 Module 9: Service Delivery</h4>
-                    <p>Handoffs and escalation flows</p>
-                </div>
-                <div class="module-card" onclick="goToSlide(12)">
-                    <h4>🎓 Module 10: Certifications</h4>
-                    <p>Professional development paths</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Continue with all other slides but optimized for LMS... -->
-        <!-- I'll include a few key slides to demonstrate the format -->
-
-        <!-- Slide 3: Technical Foundation -->
+        <!-- Slide 2: Module 1 - Technical Foundation -->
         <div class="slide">
             <div class="slide-header">
                 <h1>🔧 Module 1: Technical Foundation</h1>
@@ -571,20 +472,27 @@
             </div>
 
             <div class="example-card">
+                <h4>Real-World Example</h4>
+                <p><strong>Scenario:</strong> Client uses local servers with no backup strategy</p>
+                <p><strong>Your Response:</strong> "I see you're running critical business operations on local servers. Without proper backup, you're at risk of data loss that could shut down your business. I recommend implementing our off-site backup solution with daily monitoring and instant recovery capabilities. This ensures business continuity and gives you peace of mind."</p>
+            </div>
+
+            <div class="example-card">
                 <h4>📹 Module 1 Training Video</h4>
-                <div style="text-align: center; margin: 15px 0;">
-                    <iframe width="100%" src="https://www.youtube.com/embed/V6zJi8CU7Tk?si=x_9iZeAGY9kIy85H" 
+                <div style="text-align: center; margin: 20px 0;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/V6zJi8CU7Tk?si=x_9iZeAGY9kIy85H" 
                             title="Module 1: Technical Foundation" frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen></iframe>
+                            allowfullscreen style="max-width: 100%; border-radius: 10px;"></iframe>
                 </div>
                 <p><strong>Video Focus:</strong> Deep dive into technical infrastructure fundamentals and how to communicate them effectively to clients.</p>
             </div>
 
             <div class="exercise-card">
                 <h4>Hands-On Exercise: Network Diagram</h4>
+                <p><strong>Acme Corp Infrastructure:</strong></p>
                 <div class="diagram-container">
-                    <div style="margin: 15px 0;">
+                    <div style="margin: 20px 0;">
                         <span class="device-node">Internet</span>
                         <span class="connection-line">→</span>
                         <span class="device-node">Firewall</span>
@@ -593,54 +501,1290 @@
                         <span class="connection-line">→</span>
                         <span class="device-node">Switch</span>
                     </div>
+                    <div style="margin: 20px 0;">
+                        <span class="device-node">File Server</span>
+                        <span class="connection-line">←</span>
+                        <span style="color: #2a5298; font-weight: bold;">Switch</span>
+                        <span class="connection-line">→</span>
+                        <span class="device-node">NAS Storage</span>
+                    </div>
+                    <div style="margin: 20px 0;">
+                        <span class="device-node">10 Workstations</span>
+                        <span class="connection-line">←</span>
+                        <span style="color: #2a5298; font-weight: bold;">Switch</span>
+                        <span class="connection-line">→</span>
+                        <span class="device-node">Wireless AP</span>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Add simplified versions of remaining slides... -->
-        <!-- For brevity, I'll add just a few more key slides -->
-
-        <!-- Final slide with completion -->
+        <!-- Slide 3: Module 2 - Service Delivery Models -->
         <div class="slide">
             <div class="slide-header">
-                <h1>🎉 Training Complete!</h1>
-                <p class="subtitle">Congratulations on completing the IT Sales Training</p>
+                <h1>🎯 Module 2: Service Delivery Models</h1>
+                <p class="subtitle">Matching Client Needs with Revenue Opportunities</p>
             </div>
 
-            <div style="text-align: center; padding: 40px 0;">
-                <div class="example-card">
-                    <h3>🎯 You've Successfully Mastered:</h3>
-                    <div class="two-column">
-                        <div>
-                            <ul>
-                                <li>✅ Technical infrastructure fundamentals</li>
-                                <li>✅ Service delivery model expertise</li>
-                                <li>✅ SLA and KPI knowledge</li>
-                                <li>✅ Sales techniques and objection handling</li>
-                                <li>✅ Industry compliance requirements</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul>
-                                <li>✅ CRM and quoting systems</li>
-                                <li>✅ Service delivery processes</li>
-                                <li>✅ Professional certification paths</li>
-                                <li>✅ Client communication skills</li>
-                                <li>✅ Value proposition development</li>
-                            </ul>
-                        </div>
+            <div class="three-column">
+                <div class="content-card">
+                    <h4>🔧 Break/Fix Model</h4>
+                    <div class="key-point">
+                        <strong>Approach:</strong> Reactive, on-demand
+                    </div>
+                    <ul>
+                        <li>Pay-per-incident pricing</li>
+                        <li>Unpredictable costs</li>
+                        <li>No proactive monitoring</li>
+                        <li>Best for: Minimal IT needs</li>
+                    </ul>
+                    <div class="highlight">
+                        <strong>When to Use:</strong> Small businesses with limited IT infrastructure
                     </div>
                 </div>
 
-                <div class="quote-box" style="font-size: 1.1rem; margin: 25px 0;">
-                    <strong>"Success in IT sales comes from combining technical knowledge with exceptional communication skills. You now have both - go make it happen!"</strong>
+                <div class="content-card">
+                    <h4>⚙️ Managed Services</h4>
+                    <div class="key-point">
+                        <strong>Approach:</strong> Proactive, recurring
+                    </div>
+                    <ul>
+                        <li>Monthly recurring revenue</li>
+                        <li>Predictable costs</li>
+                        <li>24/7 monitoring</li>
+                        <li>Best for: Growing businesses</li>
+                    </ul>
+                    <div class="highlight">
+                        <strong>When to Use:</strong> Businesses with critical IT dependencies
+                    </div>
                 </div>
 
+                <div class="content-card">
+                    <h4>🚀 Project-Based</h4>
+                    <div class="key-point">
+                        <strong>Approach:</strong> Scoped, one-time
+                    </div>
+                    <ul>
+                        <li>Fixed scope & timeline</li>
+                        <li>Specific deliverables</li>
+                        <li>Defined budget</li>
+                        <li>Best for: Upgrades, migrations</li>
+                    </ul>
+                    <div class="highlight">
+                        <strong>When to Use:</strong> System implementations and major upgrades
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4>Converting Break/Fix to Managed Services</h4>
+                <div class="quote-box">
+                    <strong>Client:</strong> "We're experiencing too much downtime and our IT costs are unpredictable."
+                </div>
+                <p><strong>Your Response:</strong> "I understand your frustration. Many of our clients faced the same challenge before switching to our managed services model. With 24/7 monitoring and proactive maintenance, we can reduce your downtime by 90% while providing predictable monthly costs that are typically 30-40% lower than your current reactive spending."</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">90%</div>
+                        <div>Downtime Reduction</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">30-40%</div>
+                        <div>Cost Savings</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div>Monitoring</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <h4>Business Matching Exercise</h4>
+                <div class="checklist">
+                    <div class="checklist-item"><strong>Startup (5 employees):</strong> Break/Fix + Project support</div>
+                    <div class="checklist-item"><strong>Growing SMB (25 employees):</strong> Managed Services</div>
+                    <div class="checklist-item"><strong>Mid-size (100 employees):</strong> Comprehensive Managed Services</div>
+                    <div class="checklist-item"><strong>Enterprise (500+ employees):</strong> Managed Services + Major Projects</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Module 3 - Managed Services Essentials -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1>⚙️ Module 3: Managed Services Essentials</h1>
+                <p class="subtitle">SLAs, KPIs, and Monitoring Excellence</p>
+            </div>
+
+            <h3>🎯 Service Level Agreements (SLAs)</h3>
+            <div class="two-column">
+                <div class="content-card">
+                    <h4>⏱️ Response Time SLAs</h4>
+                    <ul>
+                        <li><strong>Critical:</strong> 15 minutes</li>
+                        <li><strong>High:</strong> 1 hour</li>
+                        <li><strong>Medium:</strong> 4 hours</li>
+                        <li><strong>Low:</strong> Next business day</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h4>🔧 Resolution Time SLAs</h4>
+                    <ul>
+                        <li><strong>Critical:</strong> 4 hours</li>
+                        <li><strong>High:</strong> 8 hours</li>
+                        <li><strong>Medium:</strong> 24 hours</li>
+                        <li><strong>Low:</strong> 72 hours</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h4>📈 Uptime Guarantees</h4>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">99.9%</div>
+                        <div>8.7 hours downtime/year</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">99.5%</div>
+                        <div>43.8 hours downtime/year</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">99.0%</div>
+                        <div>87.6 hours downtime/year</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>📊 Key Performance Indicators</h3>
+            <div class="three-column">
+                <div class="content-card">
+                    <h4>🎯 First Call Resolution</h4>
+                    <p>Percentage of issues resolved on first contact</p>
+                    <div class="highlight">Target: 85%+</div>
+                </div>
+                <div class="content-card">
+                    <h4>⏰ Ticket Aging</h4>
+                    <p>Average time tickets remain open</p>
+                    <div class="highlight">Target: <24 hours</div>
+                </div>
+                <div class="content-card">
+                    <h4>😊 Customer Satisfaction</h4>
+                    <p>Post-resolution survey scores</p>
+                    <div class="highlight">Target: 4.5/5</div>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4>Automated Patching Value Proposition</h4>
+                <div class="quote-box">
+                    <strong>Client:</strong> "How do you keep our systems secure without disrupting our business?"
+                </div>
+                <p><strong>Your Response:</strong> "Our RMM platform automatically deploys critical security patches during your scheduled maintenance windows. This reduces your vulnerability exposure from weeks to hours. You'll receive detailed reports showing exactly what was updated and when, giving you complete visibility into your security posture."</p>
+                <div class="key-point">
+                    <strong>Key Benefit:</strong> Reduces vulnerability windows from weeks to hours
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Module 4 - Deskside & Depot Services -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1>🖥️ Module 4: Deskside & Depot Services</h1>
+                <p class="subtitle">IMAC Services and Hardware Support Excellence</p>
+            </div>
+
+            <h3>🔄 IMAC Lifecycle Management</h3>
+            <div class="four-column">
+                <div class="content-card">
+                    <h4>📦 Install</h4>
+                    <ul>
+                        <li>Hardware setup</li>
+                        <li>Software installation</li>
+                        <li>User training</li>
+                        <li>Documentation</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h4>🚚 Move</h4>
+                    <ul>
+                        <li>Physical relocation</li>
+                        <li>Network reconfiguration</li>
+                        <li>Data migration</li>
+                        <li>Testing validation</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h4>➕ Add</h4>
+                    <ul>
+                        <li>Hardware additions</li>
+                        <li>License provisioning</li>
+                        <li>Access configuration</li>
+                        <li>Integration testing</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h4>🔧 Change</h4>
+                    <ul>
+                        <li>Configuration updates</li>
+                        <li>Upgrade installations</li>
+                        <li>Permission changes</li>
+                        <li>Performance optimization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>💻 Hardware Support Services</h3>
+            <div class="two-column">
+                <div class="content-card">
+                    <h4>🖼️ Device Imaging</h4>
+                    <ul>
+                        <li>Standardized configurations</li>
+                        <li>Pre-installed software</li>
+                        <li>Security policies</li>
+                        <li>Rapid deployment</li>
+                    </ul>
+                    <div class="highlight">
+                        <strong>Benefit:</strong> 90% faster deployment
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h4>🔄 Depot Services</h4>
+                    <ul>
+                        <li>Centralized repair facility</li>
+                        <li>Swap programs</li>
+                        <li>RMA processing</li>
+                        <li>Quick turnaround</li>
+                    </ul>
+                    <div class="highlight">
+                        <strong>SLA:</strong> 48-72 hour turnaround
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4>Large-Scale Deployment Scenario</h4>
+                <div class="quote-box">
+                    <strong>Client:</strong> "We're hiring 50 new employees next month and need them productive immediately."
+                </div>
+                <p><strong>Your Solution:</strong> "Our rapid deployment service can have all 50 workstations ready in 2 days. Using our standardized imaging process, each device comes pre-configured with your security policies, applications, and user profiles. We'll also stock 5 spare devices in our depot for immediate replacements."</p>
+                <div class="checklist">
+                    <div class="checklist-item">Pre-configured standard image</div>
+                    <div class="checklist-item">White-glove delivery and setup</div>
+                    <div class="checklist-item">User training and documentation</div>
+                    <div class="checklist-item">Depot stock for replacements</div>
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <h4>Deskside Support Flow</h4>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                    <ol>
+                        <li><strong>Incident Report:</strong> User reports printer issue via help desk</li>
+                        <li><strong>Ticket Creation:</strong> Issue logged with priority assignment</li>
+                        <li><strong>Remote Diagnosis:</strong> Attempt remote troubleshooting first</li>
+                        <li><strong>Deskside Dispatch:</strong> Schedule on-site visit if needed</li>
+                        <li><strong>On-Site Resolution:</strong> Diagnose and resolve issue</li>
+                        <li><strong>Validation:</strong> Test functionality with user</li>
+                        <li><strong>Documentation:</strong> Update ticket and close with notes</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Module 5 - Datacenter & AV Support -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1>🏢 Module 5: Datacenter & AV Support</h1>
+                <p class="subtitle">Smart Hands Services and AV System Excellence</p>
+            </div>
+
+            <h3>🤝 Smart Hands Services</h3>
+            <div class="three-column">
+                <div class="content-card">
+                    <h4>🔧 Rack & Stack</h4>
+                    <ul>
+                        <li>Server mounting</li>
+                        <li>Cable management</li>
+                        <li>Power connections</li>
+                        <li>Documentation</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h4>🔌 Patching Services</h4>
+                    <ul>
+                        <li>Network cable connections</li>
+                        <li>Patch panel work</li>
+                        <li>Cable tracing</li>
+                        <li>Connection testing</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h4>📦 Hardware Swaps</h4>
+                    <ul>
+                        <li>Drive replacements</li>
+                        <li>Memory upgrades</li>
+                        <li>Card installations</li>
+                        <li>Component testing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>🎥 Audio/Visual System Support</h3>
+            <div class="two-column">
+                <div class="content-card">
+                    <h4>📹 Conference Room Setup</h4>
+                    <ul>
+                        <li>Display mounting and calibration</li>
+                        <li>Camera positioning and testing</li>
+                        <li>Audio system configuration</li>
+                        <li>Control system programming</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h4>🔍 AV Diagnostics</h4>
+                    <ul>
+                        <li>Signal testing and validation</li>
+                        <li>Component troubleshooting</li>
+                        <li>Performance optimization</li>
+                        <li>User training and support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4>Executive AV Crisis Response</h4>
+                <div class="quote-box">
+                    <strong>Scenario:</strong> Remote site loses AV during critical executive presentation
+                </div>
+                <p><strong>Your Response:</strong> "We'll immediately dispatch our Smart Hands technician to your site. They'll be there within 2 hours with backup equipment if needed. Our technician will diagnose the issue, implement a temporary solution if necessary, and ensure your presentation continues without further interruption."</p>
+                <div class="key-point">
+                    <strong>Smart Hands Value:</strong> On-site technical expertise without travel costs
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <h4>Rack Connectivity Troubleshooting</h4>
+                <p>Using a patch panel map, diagnose connectivity issues:</p>
+                <div class="checklist">
+                    <div class="checklist-item">Verify physical cable connections</div>
+                    <div class="checklist-item">Test cable continuity with toner</div>
+                    <div class="checklist-item">Check patch panel documentation</div>
+                    <div class="checklist-item">Validate switch port status</div>
+                    <div class="checklist-item">Document findings and resolution</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Module 6 - Sales Skills & Solution Communication -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1>💼 Module 6: Sales Skills & Solution Communication</h1>
+                <p class="subtitle">Discovery, Value Selling, and Objection Handling Mastery</p>
+            </div>
+
+            <h3>🔍 Discovery Questions Framework</h3>
+            <div class="two-column">
+                <div class="content-card">
+                    <h4>🎯 Current State Questions</h4>
+                    <ul>
+                        <li>"What IT challenges keep you up at night?"</li>
+                        <li>"How do you currently handle IT support?"</li>
+                        <li>"What's your biggest technology frustration?"</li>
+                        <li>"How much downtime is acceptable?"</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h4>🚀 Future State Questions</h4>
+                    <ul>
+                        <li>"What would perfect IT support look like?"</li>
+                        <li>"How would improved uptime impact your business?"</li>
+                        <li>"What IT initiatives are on your roadmap?"</li>
+                        <li>"How do you measure IT success?"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>💰 ROI & TCO Positioning</h3>
+            <div class="content-card">
+                <h4>📊 Total Cost of Ownership Analysis</h4>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">Direct Costs</div>
+                        <div>Hardware, Software, Support</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Indirect Costs</div>
+                        <div>Downtime, Lost Productivity</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Hidden Costs</div>
+                        <div>Training, Inefficiencies</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>🛡️ Objection Handling Techniques</h3>
+            <div class="content-card">
+                <h4>Common Objections & Responses</h4>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                    <div class="quote-box">
+                        <strong>Objection:</strong> "We already have IT support."
+                    </div>
+                    <p><strong>Response:</strong> "That's great! Our role isn't to replace your IT team but to supplement them so they can focus on strategic initiatives instead of day-to-day firefighting. Many of our clients find this approach actually makes their internal IT more effective."</p>
+                </div>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                    <div class="quote-box">
+                        <strong>Objection:</strong> "Your price is too high."
+                    </div>
+                    <p><strong>Response:</strong> "I understand cost is important. Let's look at the total value equation. When you factor in reduced downtime, improved productivity, and predictable costs, most clients see a 20-30% reduction in their total IT spending within the first year."</p>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4>📹 Module 6 Training Video</h4>
+                <div style="text-align: center; margin: 20px 0;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/1aZ3sa5HQrw?si=FMbk4UcN7L11SqHf" 
+                            title="Module 6: Sales Skills & Solution Communication" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen style="max-width: 100%; border-radius: 10px;"></iframe>
+                </div>
+                <p><strong>Video Focus:</strong> Advanced sales techniques, discovery methods, and solution communication strategies for IT sales success.</p>
+            </div>
+
+            <div class="example-card">
+                <h4>Solution Intake Process</h4>
+                <p><strong>Goal:</strong> Gather comprehensive requirements for technical proposal</p>
+                <div class="checklist">
+                    <div class="checklist-item">Current infrastructure assessment</div>
+                    <div class="checklist-item">Business requirements and constraints</div>
+                    <div class="checklist-item">Timeline and budget parameters</div>
+                    <div class="checklist-item">Success criteria and KPIs</div>
+                    <div class="checklist-item">Stakeholder identification</div>
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <h4>Mock Discovery Call</h4>
+                <p><strong>Scenario:</strong> Manufacturing company with 100 employees, frequent IT issues</p>
+                <p><strong>Your Mission:</strong> Conduct discovery call and complete intake form</p>
+                <div class="highlight">
+                    <strong>Key Focus Areas:</strong> Business impact of downtime, current support model, growth plans, compliance requirements
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Module 7 - Tools & Systems -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1>🛠️ Module 7: Tools & Systems</h1>
+                <p class="subtitle">CRM, Quoting, and Proposal Management</p>
+            </div>
+
+            <h3>📱 Salesforce CRM Navigation</h3>
+            <div class="two-column">
+                <div class="content-card">
+                    <h4>🎯 Core Functions</h4>
+                    <ul>
+                        <li><strong>Lead Management:</strong> Track prospects</li>
+                        <li><strong>Opportunity Pipeline:</strong> Sales stages</li>
+                        <li><strong>Account Management:</strong> Client relationships</li>
+                        <li><strong>Activity Tracking:</strong> Calls, meetings, emails</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h4>📊 Reporting & Analytics</h4>
+                    <ul>
+                        <li><strong>Sales Forecasting:</strong> Pipeline value</li>
+                        <li><strong>Activity Reports:</strong> Sales metrics</li>
+                        <li><strong>Win/Loss Analysis:</strong> Deal outcomes</li>
+                        <li><strong>Performance Dashboards:</strong> KPI tracking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>💰 Quoting and Product Bundles</h3>
+            <div class="content-card">
+                <h4>🏗️ Quote to Cash Process</h4>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                    <ol>
+                        <li><strong>Opportunity Creation:</strong> Enter client requirements</li>
+                        <li><strong>Product Selection:</strong> Choose appropriate services/products</li>
+                        <li><strong>Bundle Configuration:</strong> Create package deals</li>
+                        <li><strong>Pricing Calculation:</strong> Apply discounts and terms</li>
+                        <li><strong>Quote Generation:</strong> Professional proposal creation</li>
+                        <li><strong>Approval Workflow:</strong> Management sign-off</li>
+                        <li><strong>Contract Execution:</strong> Convert to signed agreement</li>
+                    </ol>
+                </div>
+            </div>
+
+            <h3>📊 Excel Cost Modeling</h3>
+            <div class="content-card">
+                <h4>💡 TCO Calculator Components</h4>
+                <div class="three-column">
+                    <div style="background: #e6fffa; padding: 15px; border-radius: 8px;">
+                        <h4>Current State Costs</h4>
+                        <ul>
+                            <li>Existing IT spend</li>
+                            <li>Downtime impact</li>
+                            <li>Internal resources</li>
+                        </ul>
+                    </div>
+                    <div style="background: #fef5e7; padding: 15px; border-radius: 8px;">
+                        <h4>Proposed Solution</h4>
+                        <ul>
+                            <li>Monthly service fees</li>
+                            <li>Implementation costs</li>
+                            <li>Hardware investments</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f0fff4; padding: 15px; border-radius: 8px;">
+                        <h4>Net Savings</h4>
+                        <ul>
+                            <li>Reduced downtime</li>
+                            <li>Improved efficiency</li>
+                            <li>Avoided costs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>📋 Sales Deck Essentials</h3>
+            <div class="content-card">
+                <h4>🎯 Key Proposal Slides</h4>
+                <div class="checklist">
+                    <div class="checklist-item"><strong>Executive Summary:</strong> Problem, solution, value</div>
+                    <div class="checklist-item"><strong>Client Challenges:</strong> Pain points identified</div>
+                    <div class="checklist-item"><strong>Proposed Solution:</strong> Technical approach</div>
+                    <div class="checklist-item"><strong>Implementation Plan:</strong> Timeline and milestones</div>
+                    <div class="checklist-item"><strong>Investment & ROI:</strong> Costs and benefits</div>
+                    <div class="checklist-item"><strong>Next Steps:</strong> Clear call to action</div>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4>📹 Module 7 Training Video</h4>
+                <div style="text-align: center; margin: 20px 0;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jHzIGGU-Ph0?si=bPrXiic2yCEATmKp" 
+                            title="Module 7: Tools & Systems" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen style="max-width: 100%; border-radius: 10px;"></iframe>
+                </div>
+                <p><strong>Video Focus:</strong> Mastering CRM systems, quoting tools, and proposal management for efficient sales operations.</p>
+            </div>
+
+            <div class="example-card">
+                <h4>End-to-End Quote Process</h4>
+                <p><strong>Scenario:</strong> Create quote for managed services with hardware refresh</p>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                    <ol>
+                        <li>Enter opportunity in Salesforce with client requirements</li>
+                        <li>Generate bundled quote with recurring services and hardware</li>
+                        <li>Export pricing to Excel for TCO analysis</li>
+                        <li>Create professional proposal deck</li>
+                        <li>Present solution with ROI justification</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Module 8 - Industry & Compliance Knowledge -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1>📋 Module 8: Industry & Compliance Knowledge</h1>
+                <p class="subtitle">Sector-Specific Requirements and Regulatory Standards</p>
+            </div>
+
+            <h3>🏥 Healthcare Sector (HIPAA)</h3>
+            <div class="content-card">
+                <h4>🔒 HIPAA Requirements</h4>
+                <div class="two-column">
+                    <div>
+                        <ul>
+                            <li><strong>Data Encryption:</strong> At rest and in transit</li>
+                            <li><strong>Access Controls:</strong> Role-based permissions</li>
+                            <li><strong>Audit Trails:</strong> Complete activity logging</li>
+                            <li><strong>Business Associate Agreements:</strong> Compliance documentation</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="highlight">
+                            <strong>IT Sales Trigger:</strong> "How do you ensure patient data security during system maintenance?"
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>💳 Retail Sector (PCI-DSS)</h3>
+            <div class="content-card">
+                <h4>🛡️ PCI Compliance Requirements</h4>
+                <div class="two-column">
+                    <div>
+                        <ul>
+                            <li><strong>Network Segmentation:</strong> Isolate card data environment</li>
+                            <li><strong>Endpoint Security:</strong> PCI-compliant devices</li>
+                            <li><strong>Regular Testing:</strong> Vulnerability assessments</li>
+                            <li><strong>Documentation:</strong> Compliance reporting</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="highlight">
+                            <strong>IT Sales Trigger:</strong> "Your payment processing requires PCI-compliant infrastructure"
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>🌍 GDPR Compliance</h3>
+            <div class="content-card">
+                <h4>🔐 Data Protection Requirements</h4>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">Data Rights</div>
+                        <div>Access, Portability, Erasure</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Breach Notification</div>
+                        <div>72 Hours to Report</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Privacy by Design</div>
+                        <div>Built-in Data Protection</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>🏭 Industry-Specific IT Needs</h3>
+            <div class="three-column">
+                <div class="content-card">
+                    <h4>🏥 Healthcare</h4>
+                    <ul>
+                        <li>24/7 uptime requirements</li>
+                        <li>Medical device integration</li>
+                        <li>Telemedicine support</li>
+                        <li>Disaster recovery critical</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h4>🏦 Financial Services</h4>
+                    <ul>
+                        <li>High-security environments</li>
+                        <li>Real-time transaction processing</li>
+                        <li>Regulatory reporting</li>
+                        <li>Business continuity planning</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h4>🏪 Retail</h4>
+                    <ul>
+                        <li>Point-of-sale systems</li>
+                        <li>Inventory management</li>
+                        <li>Customer data protection</li>
+                        <li>Seasonal scalability</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4>📹 Module 8 Training Video</h4>
+                <div style="text-align: center; margin: 20px 0;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Gm6O9eg8Kg4?si=k5qkoedTbPCRxgMJ" 
+                            title="Module 8: Industry & Compliance Knowledge" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen style="max-width: 100%; border-radius: 10px;"></iframe>
+                </div>
+                <p><strong>Video Focus:</strong> Understanding industry-specific compliance requirements and how to position compliant IT solutions.</p>
+            </div>
+
+            <div class="example-card">
+                <h4>Compliance-Driven Sales Opportunity</h4>
+                <div class="quote-box">
+                    <strong>Scenario:</strong> Retail client needs to process credit cards securely
+                </div>
+                <p><strong>Your Approach:</strong> "To maintain PCI compliance, you'll need endpoints that meet specific security standards. Our managed endpoint solution includes encrypted storage, automated patching, and continuous monitoring - all designed to meet PCI requirements while reducing your compliance burden."</p>
+                <div class="key-point">
+                    <strong>Value Proposition:</strong> Compliance + Security + Management = Complete Solution
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <h4>Healthcare Compliance Checklist</h4>
+                <p><strong>Create a HIPAA compliance checklist for a medical practice:</strong></p>
+                <div class="checklist">
+                    <div class="checklist-item">Encrypted data storage and transmission</div>
+                    <div class="checklist-item">Role-based access controls and authentication</div>
+                    <div class="checklist-item">Comprehensive audit logging and monitoring</div>
+                    <div class="checklist-item">Regular security risk assessments</div>
+                    <div class="checklist-item">Business Associate Agreements with vendors</div>
+                    <div class="checklist-item">Incident response and breach notification procedures</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Module 9 - Service Delivery Alignment -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1>🤝 Module 9: Service Delivery Alignment</h1>
+                <p class="subtitle">Seamless Handoffs and Escalation Management</p>
+            </div>
+
+            <h3>👥 Internal Handoff Roles</h3>
+            <div class="three-column">
+                <div class="content-card">
+                    <h4>💼 Sales Role</h4>
+                    <ul>
+                        <li>Client relationship management</li>
+                        <li>Solution design and pricing</li>
+                        <li>Contract negotiation</li>
+                        <li>Smooth transition to delivery</li>
+                    </ul>
+                    <div class="highlight">
+                        <strong>Handoff Point:</strong> Signed contract
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h4>⚙️ SDM (Service Delivery Manager)</h4>
+                    <ul>
+                        <li>Implementation oversight</li>
+                        <li>Client onboarding</li>
+                        <li>Ongoing relationship management</li>
+                        <li>Service optimization</li>
+                    </ul>
+                    <div class="highlight">
+                        <strong>Primary Contact:</strong> Post-sale
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h4>🖥️ NOC (Network Operations Center)</h4>
+                    <ul>
+                        <li>24/7 monitoring</li>
+                        <li>Incident response</li>
+                        <li>Proactive maintenance</li>
+                        <li>Technical escalations</li>
+                    </ul>
+                    <div class="highlight">
+                        <strong>Operations:</strong> Day-to-day support
+                    </div>
+                </div>
+            </div>
+
+            <h3>📞 Communication & Escalation Paths</h3>
+            <div class="content-card">
+                <h4>🚨 Escalation Matrix</h4>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                    <div class="two-column">
+                        <div>
+                            <h5>Technical Escalations:</h5>
+                            <ol>
+                                <li>Level 1 Support → Level 2 Support</li>
+                                <li>Level 2 Support → Senior Engineer</li>
+                                <li>Senior Engineer → Engineering Manager</li>
+                                <li>Engineering Manager → CTO</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h5>Client Escalations:</h5>
+                            <ol>
+                                <li>SDM → Account Manager</li>
+                                <li>Account Manager → Sales Manager</li>
+                                <li>Sales Manager → VP Sales</li>
+                                <li>VP Sales → Executive Team</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>📋 Service Kickoff Process</h3>
+            <div class="content-card">
+                <h4>🚀 Implementation Checklist</h4>
+                <div class="checklist">
+                    <div class="checklist-item"><strong>Pre-kickoff:</strong> Review SOW and client requirements</div>
+                    <div class="checklist-item"><strong>Stakeholder Meeting:</strong> Introduce delivery team</div>
+                    <div class="checklist-item"><strong>Technical Discovery:</strong> Validate current environment</div>
+                    <div class="checklist-item"><strong>Project Plan:</strong> Timeline and milestones</div>
+                    <div class="checklist-item"><strong>Communication Plan:</strong> Regular updates and reporting</div>
+                    <div class="checklist-item"><strong>Success Criteria:</strong> Define measurable outcomes</div>
+                </div>
+            </div>
+
+            <h3>📊 SLA Performance Measurement</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">Response Time</div>
+                    <div>Average time to acknowledge</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Resolution Time</div>
+                    <div>Average time to resolve</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Uptime %</div>
+                    <div>System availability</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">CSAT Score</div>
+                    <div>Customer satisfaction</div>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4>📹 Module 9 Training Video</h4>
+                <div style="text-align: center; margin: 20px 0;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/aMC4fXCZlkY?si=hPsh3MPYEv0Go13r" 
+                            title="Module 9: Service Delivery Alignment" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen style="max-width: 100%; border-radius: 10px;"></iframe>
+                </div>
+                <p><strong>Video Focus:</strong> Mastering the handoff process from sales to delivery and managing client relationships throughout the service lifecycle.</p>
+            </div>
+
+            <div class="example-card">
+                <h4>Perfect Sales-to-Delivery Handoff</h4>
+                <p><strong>Scenario:</strong> Sales team closes managed services deal</p>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                    <ol>
+                        <li><strong>Contract Signing:</strong> Sales notifies SDM immediately</li>
+                        <li><strong>Document Transfer:</strong> Complete SOW and client notes shared</li>
+                        <li><strong>Team Introduction:</strong> Sales introduces SDM to client</li>
+                        <li><strong>Kickoff Scheduling:</strong> SDM schedules implementation kickoff</li>
+                        <li><strong>Ongoing Support:</strong> Sales remains available for escalations</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <h4>Service Kickoff Simulation</h4>
+                <p><strong>Role Play:</strong> Conduct a service kickoff call</p>
+                <div class="two-column">
+                    <div>
+                        <h5>Your Agenda:</h5>
+                        <ul>
+                            <li>Team introductions</li>
+                            <li>Project scope review</li>
+                            <li>Timeline discussion</li>
+                            <li>Communication plan</li>
+                            <li>Next steps</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Client Concerns to Address:</h5>
+                        <ul>
+                            <li>Timeline concerns</li>
+                            <li>Business disruption</li>
+                            <li>Training requirements</li>
+                            <li>Support availability</li>
+                            <li>Success metrics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Module 10 - Certifications Overview -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1>🎓 Module 10: Certifications & Professional Development</h1>
+                <p class="subtitle">Building Credibility Through Continuous Learning</p>
+            </div>
+
+            <h3>💻 Technical Foundation Certifications</h3>
+            <div class="two-column">
+                <div class="content-card">
+                    <h4>🔧 CompTIA A+</h4>
+                    <ul>
+                        <li><strong>Focus:</strong> Hardware and troubleshooting</li>
+                        <li><strong>Best For:</strong> Technical credibility</li>
+                        <li><strong>Duration:</strong> 2-3 months study</li>
+                        <li><strong>Value:</strong> Confidence in technical discussions</li>
+                    </ul>
+                    <div class="highlight">
+                        <strong>ROI:</strong> Improved client trust and technical conversations
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h4>🌐 CompTIA Network+</h4>
+                    <ul>
+                        <li><strong>Focus:</strong> Networking fundamentals</li>
+                        <li><strong>Best For:</strong> Infrastructure discussions</li>
+                        <li><strong>Duration:</strong> 3-4 months study</li>
+                        <li><strong>Value:</strong> Network architecture credibility</li>
+                    </ul>
+                    <div class="highlight">
+                        <strong>ROI:</strong> Better infrastructure solution positioning
+                    </div>
+                </div>
+            </div>
+
+            <h3>📋 Service Management Certifications</h3>
+            <div class="content-card">
+                <h4>⚙️ ITIL Foundation</h4>
+                <div class="two-column">
+                    <div>
+                        <ul>
+                            <li><strong>Focus:</strong> IT service management best practices</li>
+                            <li><strong>Best For:</strong> Managed services sales</li>
+                            <li><strong>Duration:</strong> 1-2 months study</li>
+                            <li><strong>Value:</strong> SLA and process expertise</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="highlight">
+                            <strong>Key Topics:</strong> SLAs, KPIs, Incident Management, Change Control
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>🚀 Vendor-Specific Programs</h3>
+            <div class="three-column">
+                <div class="content-card">
+                    <h4>🖥️ Microsoft Partner</h4>
+                    <ul>
+                        <li>Office 365 expertise</li>
+                        <li>Azure fundamentals</li>
+                        <li>Modern workplace solutions</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h4>🌐 Cisco Sales</h4>
+                    <ul>
+                        <li>Networking solutions</li>
+                        <li>Security positioning</li>
+                        <li>Collaboration tools</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h4>☁️ Salesforce Trailhead</h4>
+                    <ul>
+                        <li>CRM best practices</li>
+                        <li>Sales process optimization</li>
+                        <li>Customer success strategies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>📈 Professional Development Roadmap</h3>
+            <div class="content-card">
+                <h4>🎯 Certification Journey Planning</h4>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                    <div class="two-column">
+                        <div>
+                            <h5>Year 1 Goals:</h5>
+                            <ol>
+                                <li><strong>ITIL Foundation:</strong> Service management basics</li>
+                                <li><strong>CompTIA A+:</strong> Technical foundation</li>
+                                <li><strong>Salesforce Trailhead:</strong> CRM mastery</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h5>Year 2+ Goals:</h5>
+                            <ol>
+                                <li><strong>CompTIA Network+:</strong> Infrastructure expertise</li>
+                                <li><strong>Microsoft/Cisco:</strong> Vendor specialization</li>
+                                <li><strong>Advanced Sales:</strong> Leadership development</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4>📹 Module 10 Training Video</h4>
+                <div style="text-align: center; margin: 20px 0;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/F6gEN0kCanc?si=9Q94cnAnWabjUGwB" 
+                            title="Module 10: Certifications & Professional Development" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen style="max-width: 100%; border-radius: 10px;"></iframe>
+                </div>
+                <p><strong>Video Focus:</strong> Building your professional development roadmap and leveraging certifications for career advancement in IT sales.</p>
+            </div>
+
+            <div class="example-card">
+                <h4>Certification ROI in Sales Conversations</h4>
+                <div class="quote-box">
+                    <strong>Client:</strong> "Do your sales people actually understand technology?"
+                </div>
+                <p><strong>Your Response:</strong> "Absolutely. I hold certifications in both ITIL service management and CompTIA Network+, which means I understand not just what we're proposing, but how it integrates with your existing infrastructure and business processes. This ensures our solutions are technically sound and business-aligned."</p>
+                <div class="key-point">
+                    <strong>Credibility Builder:</strong> Certifications demonstrate commitment to professional expertise
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <h4>Personal Certification Planning</h4>
+                <p><strong>Create your 18-month certification roadmap:</strong></p>
+                <div class="checklist">
+                    <div class="checklist-item"><strong>Assess current knowledge gaps</strong> in technical and sales areas</div>
+                    <div class="checklist-item"><strong>Identify high-impact certifications</strong> for your target market</div>
+                    <div class="checklist-item"><strong>Set realistic timeline</strong> with study schedule</div>
+                    <div class="checklist-item"><strong>Budget for training</strong> materials and exam fees</div>
+                    <div class="checklist-item"><strong>Plan application</strong> of new knowledge in sales situations</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Final Assessment & Action Plan -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1>📝 Final Assessment & Action Plan</h1>
+                <p class="subtitle">Putting It All Together for Sales Success</p>
+            </div>
+
+            <h3>🧠 Comprehensive Knowledge Check</h3>
+            <div class="quiz-card">
+                <h4>Module Integration Quiz</h4>
+                <div style="background: white; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                    <div class="two-column">
+                        <div>
+                            <h5>Technical Foundation:</h5>
+                            <ol>
+                                <li>What's the difference between NAS and SAN storage?</li>
+                                <li>Explain the role of a firewall in network security</li>
+                                <li>When would you recommend SSD over HDD?</li>
+                            </ol>
+                            
+                            <h5>Service Delivery:</h5>
+                            <ol start="4">
+                                <li>What are the key components of an SLA?</li>
+                                <li>How do you calculate 99.9% uptime in hours?</li>
+                                <li>What's the difference between IMAC services?</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h5>Sales & Communication:</h5>
+                            <ol start="7">
+                                <li>How do you handle the "we already have IT" objection?</li>
+                                <li>What discovery questions reveal business impact?</li>
+                                <li>How do you position managed services vs break/fix?</li>
+                            </ol>
+                            
+                            <h5>Compliance & Industry:</h5>
+                            <ol start="10">
+                                <li>What does HIPAA require for healthcare IT?</li>
+                                <li>Why is PCI compliance important for retail?</li>
+                                <li>Which certifications build technical credibility?</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>🎯 30-60-90 Day Action Plan</h3>
+            <div class="three-column">
+                <div class="content-card">
+                    <h4>📅 First 30 Days</h4>
+                    <div class="checklist">
+                        <div class="checklist-item">Complete ITIL Foundation study</div>
+                        <div class="checklist-item">Practice technical discovery questions</div>
+                        <div class="checklist-item">Master CRM quote-to-cash process</div>
+                        <div class="checklist-item">Memorize common objection responses</div>
+                        <div class="checklist-item">Shadow 3 client meetings</div>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <h4>📅 Next 30 Days (60 Total)</h4>
+                    <div class="checklist">
+                        <div class="checklist-item">Take ITIL Foundation exam</div>
+                        <div class="checklist-item">Start CompTIA A+ preparation</div>
+                        <div class="checklist-item">Lead 2 discovery calls independently</div>
+                        <div class="checklist-item">Create first TCO analysis</div>
+                        <div class="checklist-item">Complete Salesforce Trailhead basics</div>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <h4>📅 Final 30 Days (90 Total)</h4>
+                    <div class="checklist">
+                        <div class="checklist-item">Apply for CompTIA A+ exam</div>
+                        <div class="checklist-item">Close first independent deal</div>
+                        <div class="checklist-item">Build compliance-focused proposal</div>
+                        <div class="checklist-item">Mentor newer team member</div>
+                        <div class="checklist-item">Plan next certification goal</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>📊 Success Metrics & KPIs</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">Pipeline Growth</div>
+                    <div>25% increase in qualified opportunities</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Technical Confidence</div>
+                    <div>Lead technical discussions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Certification Progress</div>
+                    <div>2+ certifications within 6 months</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Client Feedback</div>
+                    <div>95%+ satisfaction on technical competence</div>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4>Your IT Sales Excellence Journey</h4>
+                <p><strong>Congratulations!</strong> You've completed comprehensive IT sales training covering:</p>
+                <div class="two-column">
+                    <div>
+                        <ul>
+                            <li>✅ Technical infrastructure fundamentals</li>
+                            <li>✅ Service delivery model expertise</li>
+                            <li>✅ SLA and KPI knowledge</li>
+                            <li>✅ IMAC and depot services</li>
+                            <li>✅ Datacenter and AV support</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>✅ Professional sales techniques</li>
+                            <li>✅ CRM and quoting systems</li>
+                            <li>✅ Industry compliance requirements</li>
+                            <li>✅ Service delivery alignment</li>
+                            <li>✅ Professional certification pathways</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="key-point">
                     <strong>Next Steps:</strong> Apply this knowledge immediately in client interactions and begin your certification journey
                 </div>
             </div>
+
+            <div class="quote-box" style="text-align: center; font-size: 1.2rem; margin: 30px 0;">
+                <strong>"Success in IT sales comes from combining technical knowledge with exceptional communication skills. You now have both - go make it happen!"</strong>
+            </div>
         </div>
+
+        <!-- Slide 13: Quick Reference Guide -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1>📚 Quick Reference Guide</h1>
+                <p class="subtitle">Essential Information at Your Fingertips</p>
+            </div>
+
+            <div class="two-column">
+                <div class="content-card">
+                    <h4>🔧 Technical Quick Facts</h4>
+                    <ul>
+                        <li><strong>Router:</strong> Directs traffic between networks</li>
+                        <li><strong>Switch:</strong> Connects devices within a network</li>
+                        <li><strong>Firewall:</strong> Controls access and blocks threats</li>
+                        <li><strong>SSD vs HDD:</strong> SSD is faster, more reliable</li>
+                        <li><strong>NAS vs SAN:</strong> NAS=file-level, SAN=block-level</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <h4>📊 SLA Standards</h4>
+                    <ul>
+                        <li><strong>Critical Response:</strong> 15 minutes</li>
+                        <li><strong>High Response:</strong> 1 hour</li>
+                        <li><strong>99.9% Uptime:</strong> 8.7 hours downtime/year</li>
+                        <li><strong>First Call Resolution:</strong> Target 85%+</li>
+                        <li><strong>Depot SLA:</strong> 48-72 hours</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="two-column">
+                <div class="content-card">
+                    <h4>💬 Objection Responses</h4>
+                    <div style="font-size: 0.9rem;">
+                        <p><strong>"We have IT already"</strong><br>
+                        "Great! We supplement your team so they can focus on strategy instead of firefighting."</p>
+                        
+                        <p><strong>"Too expensive"</strong><br>
+                        "Let's look at total value - most clients see 20-30% savings in year one."</p>
+                        
+                        <p><strong>"Need to think about it"</strong><br>
+                        "I understand. What specific concerns can I address to help your decision?"</p>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h4>🏭 Compliance Triggers</h4>
+                    <ul>
+                        <li><strong>Healthcare:</strong> Patient data = HIPAA requirements</li>
+                        <li><strong>Retail:</strong> Credit cards = PCI compliance needed</li>
+                        <li><strong>Finance:</strong> Customer data = SOX/GLBA rules</li>
+                        <li><strong>EU Business:</strong> Personal data = GDPR applies</li>
+                        <li><strong>Government:</strong> Contracts = FedRAMP/FISMA</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h4>🎯 Discovery Question Bank</h4>
+                <div class="three-column" style="font-size: 0.9rem;">
+                    <div>
+                        <h5>Current State:</h5>
+                        <ul>
+                            <li>"How do you handle IT issues today?"</li>
+                            <li>"What's your biggest IT frustration?"</li>
+                            <li>"How much downtime is acceptable?"</li>
+                            <li>"Who manages your IT currently?"</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Business Impact:</h5>
+                        <ul>
+                            <li>"What happens when systems go down?"</li>
+                            <li>"How does IT support your growth?"</li>
+                            <li>"What IT initiatives are planned?"</li>
+                            <li>"How do you measure IT success?"</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Decision Process:</h5>
+                        <ul>
+                            <li>"Who else is involved in IT decisions?"</li>
+                            <li>"What's your budget for IT improvements?"</li>
+                            <li>"When do you need this implemented?"</li>
+                            <li>"What would success look like?"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4>Emergency Contact Information</h4>
+                <div class="two-column">
+                    <div>
+                        <h5>Technical Escalation:</h5>
+                        <ul>
+                            <li>Solutions Engineer: ext. 1001</li>
+                            <li>Technical Manager: ext. 1010</li>
+                            <li>NOC Emergency: ext. 2222</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Sales Support:</h5>
+                        <ul>
+                            <li>Sales Manager: ext. 1100</li>
+                            <li>Pricing Team: ext. 1200</li>
+                            <li>Legal/Contracts: ext. 1300</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="navigation">
+        <button class="nav-btn" onclick="previousSlide()" id="prevBtn">← Previous</button>
+        <div class="slide-info">
+            <span id="slideCounter">Slide 1 of 13</span>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 7.7%"></div>
+            </div>
+        </div>
+        <button class="nav-btn" onclick="nextSlide()" id="nextBtn">Next →</button>
     </div>
 
     <script>
@@ -678,18 +1822,14 @@
             showSlide(slideNumber - 1);
         }
 
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+        });
+
         // Initialize
         showSlide(0);
-
-        // Prevent right-click and other context menu issues in LMS
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        
-        // Ensure proper iframe behavior
-        if (window.self !== window.top) {
-            // We're in an iframe
-            document.body.style.margin = '0';
-            document.body.style.padding = '5px';
-        }
     </script>
 </body>
 </html>
